@@ -1,0 +1,88 @@
+{
+  "formatter": {
+    "enabled": true,
+    "formatWithErrors": false,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "lf",
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter": {
+      "jsxQuoteStyle": "single",
+      "quoteProperties": "asNeeded",
+      "trailingCommas": "all",
+      "semicolons": "asNeeded",
+      "arrowParentheses": "always",
+      "bracketSpacing": true,
+      "bracketSameLine": false,
+      "quoteStyle": "single"
+    }
+  },
+  "json": {
+    "parser": {
+      "allowComments": true
+    }
+  },
+  "linter": {
+    "enabled": true,
+    // see rules https://biomejs.dev/linter/rules/
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        // recommended rules
+        "noSvgWithoutTitle": "off",
+        "useAltText": "off",
+        "useButtonType": "off",
+        "useKeyWithClickEvents": "off",
+        "useMediaCaption": "off",
+        "useValidAriaRole": "off"
+      },
+      "complexity": {
+        // recommended rules
+        "noExtraBooleanCast": "off",
+        "noForEach": "off",
+        "useArrowFunction": "off",
+        "useLiteralKeys": "off",
+        "useOptionalChain": "off",
+        "noUselessFragments": "off"
+      },
+      "correctness": {
+        // optional rules
+        "noUndeclaredVariables": "off",
+        "noUnusedImports": "warn",
+        "noUnusedVariables": "error"
+      },
+      "style": {
+        // recommended rules
+        "noParameterAssign": "off",
+        "noUnusedTemplateLiteral": "off",
+        "noUselessElse": "off",
+        "useImportType": "off", // NestJSのDIが必要な箇所でimport typeに変更されるとエラーになるためoffにする
+        "useNodejsImportProtocol": "off",
+        "useTemplate": "off",
+        // optional rules
+        "noNamespace": "error",
+        "useConsistentArrayType": "error"
+      },
+      "suspicious": {
+        // recommended rules
+        "noArrayIndexKey": "off",
+        "noAssignInExpressions": "off",
+        "noControlCharactersInRegex": "off",
+        "noDebugger": "warn",
+        "noDoubleEquals": "off",
+        "noExplicitAny": "off",
+        "noExportsInTest": "off",
+        "noGlobalIsNan": "off",
+        "noImplicitAnyLet": "off",
+        "noMisleadingCharacterClass": "off",
+        "noPrototypeBuiltins": "off",
+        "noShadowRestrictedNames": "off",
+        "noThenProperty": "off",
+        // optional rules
+        "noEmptyBlockStatements": "error"
+      }
+    }
+  }
+}
