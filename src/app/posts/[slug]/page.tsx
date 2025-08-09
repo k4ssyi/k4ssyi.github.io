@@ -106,13 +106,9 @@ const BlogDetailPage = async ({
 
   return (
     <main>
-      <article style={{ maxWidth: 700, margin: '0 auto' }}>
-        <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>
-          {post.title}
-        </h1>
-        <div
-          style={{ color: '#666', fontSize: '0.95rem', marginBottom: '1rem' }}
-        >
+      <article className='max-w-[700px] mx-auto'>
+        <h1 className='text-3xl font-extrabold mb-2'>{post.title}</h1>
+        <div className='text-muted-foreground text-sm mb-4'>
           {formatDate(post.date)}
         </div>
         <Image
@@ -120,21 +116,17 @@ const BlogDetailPage = async ({
           alt={`${post.title}のカバー画像`}
           width={700}
           height={350}
-          style={{
-            borderRadius: '8px',
-            marginBottom: '1.5rem',
-            objectFit: 'cover',
-          }}
+          className='rounded-lg mb-6 object-cover'
           priority
         />
-        <div style={{ fontSize: '1.1rem', lineHeight: 1.8 }}>
+        <div className='prose prose-neutral max-w-none text-lg'>
           <ReactMarkdown
             rehypePlugins={[rehypeSanitize]}
             components={{
               a: (props) => (
                 <a
                   {...props}
-                  style={{ color: '#1976d2', textDecoration: 'underline' }}
+                  className='text-blue-600 underline'
                   target='_blank'
                   rel='noopener noreferrer'
                 >
@@ -142,56 +134,39 @@ const BlogDetailPage = async ({
                 </a>
               ),
               ul: (props) => (
-                <ul
-                  {...props}
-                  style={{ paddingLeft: '1.5em', marginBottom: '1em' }}
-                >
+                <ul {...props} className='list-disc pl-6 mb-4'>
                   {props.children}
                 </ul>
               ),
               ol: (props) => (
-                <ol
-                  {...props}
-                  style={{ paddingLeft: '1.5em', marginBottom: '1em' }}
-                >
+                <ol {...props} className='list-decimal pl-6 mb-4'>
                   {props.children}
                 </ol>
               ),
               li: (props) => (
-                <li {...props} style={{ marginBottom: '0.3em' }}>
+                <li {...props} className='mb-1'>
                   {props.children}
                 </li>
               ),
               h1: (props) => (
-                <h1
-                  {...props}
-                  style={{ fontSize: '1.6rem', margin: '1.5em 0 0.7em' }}
-                >
+                <h1 {...props} className='text-2xl font-bold mt-8 mb-4'>
                   {props.children}
                 </h1>
               ),
               h2: (props) => (
-                <h2
-                  {...props}
-                  style={{ fontSize: '1.2rem', margin: '1.2em 0 0.6em' }}
-                >
+                <h2 {...props} className='text-xl font-semibold mt-6 mb-3'>
                   {props.children}
                 </h2>
               ),
               p: (props) => (
-                <p {...props} style={{ margin: '0.7em 0' }}>
+                <p {...props} className='my-3'>
                   {props.children}
                 </p>
               ),
               code: (props) => (
                 <code
                   {...props}
-                  style={{
-                    background: '#f5f5f5',
-                    borderRadius: '4px',
-                    padding: '0.2em 0.4em',
-                    fontSize: '0.95em',
-                  }}
+                  className='bg-gray-100 rounded px-1 py-0.5 text-sm'
                 >
                   {props.children}
                 </code>
@@ -199,14 +174,7 @@ const BlogDetailPage = async ({
               pre: (props) => (
                 <pre
                   {...props}
-                  style={{
-                    background: '#222',
-                    color: '#fff',
-                    borderRadius: '6px',
-                    padding: '1em',
-                    overflowX: 'auto',
-                    margin: '1em 0',
-                  }}
+                  className='bg-gray-900 text-white rounded-lg p-4 overflow-x-auto my-4'
                 >
                   {props.children}
                 </pre>
@@ -214,13 +182,7 @@ const BlogDetailPage = async ({
               blockquote: (props) => (
                 <blockquote
                   {...props}
-                  style={{
-                    borderLeft: '4px solid #1976d2',
-                    background: '#f0f4fa',
-                    margin: '1em 0',
-                    padding: '0.5em 1em',
-                    color: '#333',
-                  }}
+                  className='border-l-4 border-blue-600 bg-blue-50 p-4 my-4 text-gray-800'
                 >
                   {props.children}
                 </blockquote>

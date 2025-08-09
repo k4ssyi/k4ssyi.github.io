@@ -1,3 +1,8 @@
+'use client'
+
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BlogList } from './_components/blog-list'
 import { CareerHistory } from './_components/career-history'
 import { Contact } from './_components/contact'
@@ -136,22 +141,43 @@ export default function Home() {
         avatarUrl={PROFILE.avatarUrl}
         bio={PROFILE.bio}
       />
-      <div style={{ marginTop: '2rem' }}>
-        <CareerHistory education={EDUCATION} work={WORK} />
-      </div>
-      <div style={{ marginTop: '2rem' }}>
-        <Skillset skills={SKILLS} />
-      </div>
-      <div style={{ marginTop: '2rem' }}>
-        <BlogList posts={BLOG_POSTS} />
-      </div>
-      <div style={{ marginTop: '2rem' }}>
-        <Contact
-          googleFormUrl={GOOGLE_FORM_URL}
-          email={EMAIL}
-          snsLinks={SNS_LINKS}
-        />
-      </div>
+      <Separator className='my-8' />
+      <Tabs defaultValue='career' className='w-full max-w-2xl mx-auto'>
+        <TabsList className='grid w-full grid-cols-3 mb-4'>
+          <TabsTrigger value='career'>経歴</TabsTrigger>
+          <TabsTrigger value='skills'>スキル</TabsTrigger>
+          <TabsTrigger value='blog'>ブログ</TabsTrigger>
+        </TabsList>
+        <TabsContent value='career'>
+          <CareerHistory education={EDUCATION} work={WORK} />
+        </TabsContent>
+        <TabsContent value='skills'>
+          <Skillset skills={SKILLS} />
+          <div className='mt-4 flex flex-wrap gap-2'>
+            <Badge variant='outline' className='text-xs'>
+              TypeScript
+            </Badge>
+            <Badge variant='outline' className='text-xs'>
+              React
+            </Badge>
+            <Badge variant='outline' className='text-xs'>
+              Next.js
+            </Badge>
+            <Badge variant='secondary' className='text-xs'>
+              得意分野
+            </Badge>
+          </div>
+        </TabsContent>
+        <TabsContent value='blog'>
+          <BlogList posts={BLOG_POSTS} />
+        </TabsContent>
+      </Tabs>
+      <Separator className='my-8' />
+      <Contact
+        googleFormUrl={GOOGLE_FORM_URL}
+        email={EMAIL}
+        snsLinks={SNS_LINKS}
+      />
     </main>
   )
 }

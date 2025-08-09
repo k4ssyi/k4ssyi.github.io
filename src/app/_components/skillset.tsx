@@ -1,4 +1,9 @@
+'use client'
+
 import React from 'react'
+import { Badge } from '@/components/ui/badge'
+import { Card, CardContent } from '@/components/ui/card'
+import { TypographyH1 } from '@/components/ui/typography'
 
 type Skill = {
   name: string
@@ -11,37 +16,35 @@ type SkillsetProps = {
 
 export const Skillset: React.FC<SkillsetProps> = ({ skills }) => (
   <section aria-label='スキルセット'>
-    <h2 style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>スキルセット</h2>
-    <ul
-      style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '0.5rem',
-        padding: 0,
-        margin: 0,
-      }}
-    >
-      {skills.map((skill, _) => (
-        <li
-          key={skill.name}
-          style={{
-            listStyle: 'none',
-            padding: '0.4em 1em',
-            borderRadius: '999px',
-            background: skill.isMain ? '#1976d2' : '#e0e0e0',
-            color: skill.isMain ? '#fff' : '#333',
-            fontWeight: skill.isMain ? 'bold' : 'normal',
-            fontSize: '1rem',
-            border: skill.isMain ? '2px solid #1976d2' : '1px solid #ccc',
-          }}
-          aria-label={skill.isMain ? `${skill.name}（得意分野）` : skill.name}
-        >
-          {skill.name}
-          {skill.isMain && (
-            <span style={{ marginLeft: 4, fontSize: '0.9em' }}>★</span>
-          )}
-        </li>
-      ))}
-    </ul>
+    <TypographyH1 className='text-2xl mb-4'>スキルセット</TypographyH1>
+    <Card>
+      <CardContent className='flex flex-wrap gap-2 p-4'>
+        {skills.map((skill) => (
+          <Badge
+            key={skill.name}
+            variant={skill.isMain ? 'default' : 'outline'}
+            className={`text-base px-4 py-2 rounded-full flex items-center gap-1 transition-all duration-200 ${skill.isMain ? 'bg-blue-600 text-white border-blue-600 shadow-md scale-105' : 'hover:bg-blue-50 hover:border-blue-300'} `}
+            style={{
+              letterSpacing: '0.02em',
+              fontWeight: skill.isMain ? 700 : 500,
+              fontFamily: 'system-ui, sans-serif',
+              fontSize: '1.05rem',
+            }}
+          >
+            {skill.name}
+            {skill.isMain && (
+              <span
+                className='ml-1 text-yellow-300 text-lg drop-shadow'
+                aria-label='メインスキル'
+                title='メインスキル'
+                role='img'
+              >
+                ★
+              </span>
+            )}
+          </Badge>
+        ))}
+      </CardContent>
+    </Card>
   </section>
 )
