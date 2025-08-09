@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/src/app/layout.tsx"],"sourcesContent":["import type { Metadata } from 'next'\n\nexport const metadata: Metadata = {\n  title: 'プロフィール',\n  description: '笠井凌のプロフィールサイト',\n  metadataBase: new URL('https://k4ssyi.github.io/'),\n}\n\nimport './globals.css'\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang='ja'>\n      <body>{children}</body>\n    </html>\n  )\n}\n"],"names":[],"mappings":";;;;;;AAEO,MAAM,WAAqB;IAChC,OAAO;IACP,aAAa;IACb,cAAc,IAAI,IAAI;AACxB;;AAIe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,6WAAC;QAAK,MAAK;kBACT,cAAA,6WAAC;sBAAM;;;;;;;;;;;AAGb"}},
+    {"offset": {"line": 35, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/node_modules/.pnpm/next@15.0.2_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/next/src/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.ts"],"sourcesContent":["module.exports = require('../../module.compiled').vendored[\n  'react-rsc'\n].ReactJsxDevRuntime\n"],"names":["module","exports","require","vendored","ReactJsxDevRuntime"],"mappings":";AAAAA,OAAOC,OAAO,GAAGC,QAAQ,qMAAyBC,QAAQ,CACxD,YACD,CAACC,kBAAkB","ignoreList":[0]}},
+    {"offset": {"line": 48, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}
