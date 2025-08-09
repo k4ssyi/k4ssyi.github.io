@@ -1,5 +1,9 @@
 # my-blog
 
+## page
+
+https://k4ssyi.github.io/
+
 ## GitHub Pagesデプロイ手順
 
 1. `next.config.js` の `distDir` を `dist` に設定
