@@ -1,6 +1,5 @@
 'use client'
 
-import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { BlogList } from './_components/blog-list'
@@ -153,20 +152,6 @@ export default function Home() {
         </TabsContent>
         <TabsContent value='skills'>
           <Skillset skills={SKILLS} />
-          <div className='mt-4 flex flex-wrap gap-2'>
-            <Badge variant='outline' className='text-xs'>
-              TypeScript
-            </Badge>
-            <Badge variant='outline' className='text-xs'>
-              React
-            </Badge>
-            <Badge variant='outline' className='text-xs'>
-              Next.js
-            </Badge>
-            <Badge variant='secondary' className='text-xs'>
-              得意分野
-            </Badge>
-          </div>
         </TabsContent>
         <TabsContent value='blog'>
           <BlogList posts={BLOG_POSTS} />
