@@ -10,48 +10,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import ReactMarkdown from 'react-markdown'
 import rehypeSanitize from 'rehype-sanitize'
-
-// ダミーデータ（本来はMDファイルやAPIから取得）
-const BLOG_POSTS = [
-  {
-    slug: 'hello-world',
-    title: 'はじめてのブログ投稿',
-    date: '2024-07-01',
-    summary: 'このブログではフロントエンド技術やキャリアについて発信します。',
-    coverImage: '/assets/blog/hello-world/cover.jpg',
-    content: `# はじめてのブログ投稿
-
-こんにちは！山田太郎です。
-
-このブログではフロントエンド技術やキャリアについて発信していきます。
-
-- React/Next.js
-- TypeScript
-- UI/UX
-
-よろしくお願いします！`,
-  },
-  {
-    slug: 'dynamic-routing',
-    title: 'Next.jsの動的ルーティング入門',
-    date: '2024-07-10',
-    summary: 'Next.jsのApp Routerによる動的ルーティングの基本を解説します。',
-    coverImage: '/assets/blog/dynamic-routing/cover.jpg',
-    content: `# Next.jsの動的ルーティング入門
-
-App Routerの[slug]ページの作り方を解説します。`,
-  },
-  {
-    slug: 'preview',
-    title: 'プレビュー機能の実装例',
-    date: '2024-07-15',
-    summary: 'ブログ記事のプレビュー機能をNext.jsで実装する方法を紹介します。',
-    coverImage: '/assets/blog/preview/cover.jpg',
-    content: `# プレビュー機能の実装例
-
-Next.jsでブログ記事のプレビュー機能を作る方法を紹介します。`,
-  },
-]
+import { BLOG_POSTS } from '@/data/content'
 
 // 記事データ取得
 function getPostBySlug(slug: string) {

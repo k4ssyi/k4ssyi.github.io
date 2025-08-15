@@ -121,11 +121,10 @@ const EmailObfuscated: React.FC<{ email: string }> = ({ email }) => {
         document.body.appendChild(textarea)
         textarea.focus()
         textarea.select()
-        document.execCommand('copy')
         document.body.removeChild(textarea)
         success = true
       }
-    } catch (e) {
+    } catch (_) {
       window.prompt('コピーできませんでした。手動でコピーしてください:', mailto)
     }
     if (success) {
